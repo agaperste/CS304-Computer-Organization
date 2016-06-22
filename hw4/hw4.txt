@@ -1,0 +1,80 @@
+Yingzhu Zhang
+CSCI 304
+Professor Li
+HW4
+
+
+1.Question 1:
+	Original:
+		void shift(int a[], int n) {
+			int i;
+			for(i = 0; i != n-1; i++)
+			 a[i] = a[i+1];
+		}
+
+	Pointer-based:
+		void shift (int *a, int n) {
+			int a_helper[n];
+			a = &a_helper[0];
+
+			int i;
+			for (i=0; i!= n-1; i++){
+				*(a+i) = *(a+(i+1));
+			}
+		}
+
+
+2.Question 2:
+	blocks = 0x4680
+	ptr = 0x4680
+	temp = 0x7ff9 (a random memory address)
+
+	temp = A
+	temp = C
+	temp = B
+	temp = A
+
+	ptr = 0x4682
+	temp = C
+	temp = B
+
+	ptr = 0x4680
+	ptr = 0x4681, temp = B
+	ptr = 0x4681, temp = C
+	ptr = 0x4682, temp = C
+	temp = C
+
+
+3.Question 6:
+	address		content
+	...
+	0xbf9d191c
+	0xbf9d1918	0xbf9d1968
+	0xbf9d1914	0x21
+	0xbf9d1910	0x2c
+	0xbf9d190c	0x37
+	0xbf9d1908
+	0xbf9d1904
+	0xbf9d1900
+	0xbf9d19fc
+	0xbf9d19f8
+	0xbf9d19f4
+	0xbf9d19f0
+	0xbf9d19ec
+	0xbf9d19e8
+	0xbf9d19e4	0xbf9d190c
+	0xbf9d19e0	0x08048412
+	0xbf9d19dc	0x6f9d1918
+	0xbf9d19d8
+	...
+
+	Registers that have changed since entry to main:
+	%esp = 0xbf9d18dc
+	%eip = 0x080483db
+	%eax = 0xbf9d190c
+	%ebp = 0xbf9d18dc
+
+
+4. three integers are: 2, 4, 6
+	first number != 0
+	last two numbers multipled = 24

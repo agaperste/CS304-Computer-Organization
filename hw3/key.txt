@@ -1,0 +1,33 @@
+Problem2:
+a. 0x08048a37
+b. 0xc08510c4
+c. 0x08048a6b
+d. 0xfffffe73
+e. 0xfffdc5e8
+f. 0x08048a37
+g. 0x136ce7ad
+h. 0x0dc5b2ea
+i. 0x3a2df8a7
+j. 0x08048c92
+
+Problem3:(example)
+test:
+	movl	8(%ebp), %eax	#x
+	movl	12(%ebp), %edx  #y
+	cmpl	%edx, %eax	#x-y
+	jg	.Else		#if x-y>0
+
+	addl	%edx, %eax	#x+y
+	movl	%eax, -4(%ebp)	#result = x+y
+	jmp	.Exit
+.Else:
+	movl	8(%ebp), %eax	#x
+	movl	12(%ebp), %edx	#y
+	subl	%edx, %eax	#x-y
+	sal	$1, %eax	#*2
+	#addl	%eax, %eax
+	#imul	$2, %eax
+	movl	%eax, -4(%ebp)	#result=(x-y)*2
+.Exit:
+	movl	-4(%ebp), %eax
+	ret

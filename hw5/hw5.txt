@@ -1,0 +1,65 @@
+Yingzhu Zhang
+CSCI 304
+Professor Li
+HW5
+
+1. Call by Value
+
+The original code did not work because it was doing call by value, which means when variable c is called, the data is copied from the variable used in main() to a variable used by the function. So when the data passed is modified inside the functon add(), the value of c is only changed in the variable used inside the function. 
+
+Therefore, we need to use call by reference, which means a pointer to the data is copied instead of the actual variable. Because a pointer is copied, if the value a that pointers address is changed in the function, the value is also changed in main().
+
+---------------------------------
+
+#include <stdio.h>
+
+void add(int *a, int *b, int *c);
+
+int main() {
+    int x=1,y=2, z;
+    add(&x,&y,&z);
+    printf("x=%d, y=%d, and x+y=%d\n", x,y,z);
+    return 0;
+}
+
+void add(int *a, int *b, int *c) {
+  *c=*a+*b;
+}
+
+---------------------------------
+
+
+2. Assembly code
+	Problem 2.
+		fun1 (X)
+		-> fun3
+
+	Problem 3.
+		fun6
+
+	Problem 4.
+		int loop(int x, int y)
+		{
+		   int i;
+		   int r = 1;
+		   for (i=1; x>y; i++ ) {
+		      r = r + x;
+		      x --;
+		   }
+		   return r; 
+		}
+
+	Problem 5.
+		fun7 corresponds to choice NONE :( (X) ->4
+		fun8 corresponds to choice1 (X) ->5
+		fun9 corresponds to choice5(X) ->1
+
+	---------------------------------
+
+	Problem 5.
+		temp1 %ebx
+		temp2 0x8049940
+		temp4 %ecx (if it IS calculated ater printf) else: 0x8049d60； but I think it is %ecx...)
+		buf1 0xfffff7f4(%ebp)
+		buf2 0x8049960
+

@@ -1,0 +1,109 @@
+Yingzhu Zhang
+yzhang21
+
+
+1. Consider a virtual memory system with the following properties:
+40-bit virtual byte address
+16 KB pages = 2^14 Bytes
+36 bit physical byte address 
+
+	(1) 
+	(2^40)/(2^14) = 2^26 entries on PT
+	lg(2^36)-lg(2^14) = 22
+	22 + 4 = 26 bits/entry
+
+	total size of the page table for each process: (2^26)*26 bits
+
+
+	(2) 
+	VA = 0x123456789a = 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010
+	offset = last 14 bits of virtual address = 11 1000 1001 1010 
+	VPN = 00 0100 1000 1101 0001 0101 1001 = 0x48d159
+	PPN = 0x34 = 0011 0100
+	PA = PPN+offset = 00 1101 0011 1000 1001 1010 = 0xd389a
+
+	entry in the page table it should read to get PPN: 0x48d159
+	physical address: 0xd389a
+
+
+	(3) 
+	number of sets = 128/4 = 32 
+	VA bits = 40 bits
+
+	TLB index bits = lg(32) = 5 bits
+	TLB tag bits = VA bits - TLB index bits = 40-5 = 35 bits
+
+
+	(4) 
+	PA bits = 36
+	S = 256/8 = 32, s = lg(S) = 5
+	B = 32, b = lg(B) = 5
+
+	cache tag = 36-5-5 = 26 bits
+	cache index = 5 bits
+	cache offset = 5 bits
+
+CORRECTION:
+(3) Suppose TLB is 4-way associative with 128 entries in total. What are the TLB tag bits and TLB index bits for virtual address 0x123456789a? 
+
+(4) Suppose the cache is 8-way associative with 256 blocks each of which has 32 bytes. Based on (2), what are the cache tag, cache index and cache offset? 
+
+
+
+
+
+
+
+2. Exceptions
+	(1) i)return to the current state, ii)return to the next state, iii)abort
+
+	(2) In the previous problem, if the page table entry for that address is invalid, explain what will hapen before the program resumes. Try to list all the actions taken by different components of the computer.  
+	?
+
+3. Struct
+	(1)
+	#define MAX_NAME_LEN 127
+	typedef struct {
+	    char name[MAX_NAME_LEN + 1];
+	    unsigned long sid;
+	} Student;
+
+	/* return the name of student s */
+	const char* getName (const Student* s) {
+	    return s->name;
+	}
+
+	/* set the name of student s
+	If name is too long, cut off characters after the maximum number of characters allowed.
+	*/
+	void setName(Student* s, const char* name) {
+		strncpy(s->name, name, MAX_NAME_LEN);
+	    s->name[MAX_NAME_LEN] = '\0';
+	}
+
+	/* return the SID of student s */
+	unsigned long getStudentID(const Student* s) {
+		return s->sid;
+	}
+
+	/* set the SID of student s */
+	void setStudentID(Student* s, unsigned long sid) {
+		s->sid = sid;
+	}
+
+	(2)
+	This function declares s locally yet return a pointer to this local variable. It is only valid before the scope ends, so as soon as the function finishes, it will change when the memory gets overwritten.
+
+void makeAndrew(Student *s) {
+setName( s, "Andrew");
+setStudentID( s, 12345678);
+}
+
+
+...
+
+Student s;
+makeAndrew( &s );
+
+...
+

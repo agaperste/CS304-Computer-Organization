@@ -1,0 +1,18 @@
+yingjac:hw3 jacquelinezhang$ ssh yzhang21@me.cs.wm.edu
+Password: 
+Last login: Thu Feb 19 10:14:09 2015 from 100.71.54.37
+Have a lot of fun...
+yzhang21@me:~> ls
+cs304    Documents  Music     Public     Videos
+Desktop  Downloads  Pictures  Templates
+yzhang21@me:~> cd cs304/
+yzhang21@me:~/cs304> ls
+hw1  hw2  hw3  lab1
+yzhang21@me:~/cs304> cd hw3
+yzhang21@me:~/cs304/hw3> cli04/bin/submit CS304 hw3 chfile.c hw3.txt
+-bash: cli04/bin/submit: No such file or directory
+yzhang21@me:~/cs304/hw3> ls
+chfile.c  f1.txt  hw3.txt
+yzhang21@me:~/cs304/hw3> cli04/bin/submit CS304 hw3 chfile.c hw3.txt
+-bash: cli04/bin/submit: No such file or directory
+yzhang21@me:~/cs304/hw3> 

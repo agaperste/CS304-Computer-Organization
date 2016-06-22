@@ -1,0 +1,4 @@
+George  Washington 80 90
+Thomas Jefferson 90 100
+James Monroe 78 99
+John Tyle 99 67

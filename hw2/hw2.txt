@@ -1,0 +1,59 @@
+Yingzhu Zhang
+
+
+Problem 3
+(1) Give the floating point representation of -213. 
+(2) What floating point numbers are represented by the following bit patterns? Give answer in decimal system, no scientific notation. 
+
+Note that we have 32 bits word: S(1bit).Exp(8bits).Sig(23bits). Normally the decimal number is (-1)^S*(1.Sig)*2^(Exp-127) as we discussed in class. There are some exceptions:
+
+1. If Exp=0FF (i.e., 0b11111111), the number will be NaN (not a number) if the significand (Sig) is not 0; 
+2. If Exp=0FF (i.e., 0b11111111), the number will be  ±infinity if the significand (Sig) is 0 depending on the sign (S).  
+  
+a) 0x00000000
+b) 0xBF800000
+c) 0x44802000
+
+	(1) -213 = 1 10000110 10101010100000000000000 WRONG
+		CORRECT c3550000 1 10000110 10101010000...
+	(2) (a) 0x00000000 = 0
+		(b)	0xBF800000 = 0b 1 01111111 00000000000000000000000 = -1
+		(c) 0x44802000 = 0b 0 10001001 00000000010000000000000 = +1025
+
+--------------------------------------
+
+Problem 4
+	main(){
+	int i, j, *p, *q;
+	// The following line means i=5; j=i;
+	j=(i=5); 
+		-->i=5, j = 5
+	// The following line means the logical value of i==4 will be assigned to j. That is, if i is equal to 4, then j=1; otherwise j=0; 
+	j=(i==4);
+		-->i=5, j=0
+	j=++i;
+		-->i=6, j=6
+	j=i--;
+		-->i=5, j=6
+	p=&i;
+		-->i=5, j=6
+	q=&j;
+		-->i=5, j=6
+	*p=3;
+		-->i=3, j=6
+	*q=*p+1;
+		-->i=3, j=4
+	i=8;
+		-->i=8, j=4
+	j=9;
+		-->i=8, j=9
+	(*p)++;
+		-->i=9, j=9
+	(*q)++;
+		-->i=9, j=10
+	q=p;
+		-->i=9, j=9 WRONG 9, 10
+	(*q)--;
+		-->i=9, j=8 WRONG 8, 10
+	return 0;
+	}

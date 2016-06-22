@@ -1,0 +1,210 @@
+    154 /lib/ld-linux.so.2
+    19f 4Pl E$
+    4a9 libc.so.6
+    4b3 _IO_stdin_used
+    4c2 socket
+    4c9 fflush
+    4d0 strcpy
+    4d7 exit
+    4dc sprintf
+    4e4 fopen
+    4ea __isoc99_sscanf
+    4fa connect
+    502 signal
+    509 puts
+    50e stdin
+    514 strtol
+    51b fgets
+    521 __errno_location
+    532 read
+    537 stdout
+    53e memcpy
+    545 __ctype_b_loc
+    553 getenv
+    55a stderr
+    561 alarm
+    567 gethostbyname
+    575 bcopy
+    57b close
+    581 fprintf
+    589 sleep
+    58f __libc_start_main
+    5a1 write
+    5a7 __gmon_start__
+    5b6 GLIBC_2.3
+    5c0 GLIBC_2.1
+    5ca GLIBC_2.7
+    5d4 GLIBC_2.0
+    958 PTRh
+    965 QVhP
+   147c UWVS
+   157b <[^_]
+   1581 UWVS
+   15c8 Erro
+   15cf r: C
+   15d6 lien
+   15dd t un
+   15e4 able
+   15eb  to 
+   15f2 crea
+   15f9 te s
+   15fe @ ockef
+   1630 Erro
+   1637 r: D
+   163e NS i
+   1645 s un
+   164c able
+   1653  to 
+   165a reso
+   1661 lve 
+   1666 @ serv
+   166d @$er a
+   1674 @(ddref
+   167c @,ss
+   1727 Erro
+   172e r: U
+   1735 nabl
+   173c e to
+   1743  con
+   174a nect
+   1751  to 
+   1758 the 
+   175d @ servf
+   1765 @$er
+   17e2 Erro
+   17e9 r: R
+   17f0 esul
+   17f7 t st
+   17fe ring
+   1805  too
+   180c  lar
+   1813 ge. 
+   1818 @ Incr
+   181f @$ease
+   1826 @( SUB
+   182d @,MITR
+   1834 @0_MAX
+   183b @4BUF
+   1883 <*t!
+   18ae Q< u
+   194a Erro
+   1951 r: C
+   1958 lien
+   195f t un
+   1966 able
+   196d  to 
+   1974 writ
+   197b e to
+   1980 @  the
+   1987 @$ ser
+   198e @(ver
+   19eb Erro
+   19f2 r: C
+   19f9 lien
+   1a00 t un
+   1a07 able
+   1a0e  to 
+   1a15 read
+   1a1c  fir
+   1a21 @ st h
+   1a28 @$eade
+   1a2f @(r fr
+   1a36 @,om s
+   1a3d @0ervef
+   1afc Erro
+   1b03 r: C
+   1b0a lien
+   1b11 t un
+   1b18 able
+   1b1f  to 
+   1b26 read
+   1b2d  hea
+   1b32 @ ders
+   1b39 @$ fro
+   1b40 @(m se
+   1b47 @,rver
+   1bb2 Erro
+   1bb9 r: C
+   1bc0 lien
+   1bc7 t un
+   1bce able
+   1bd5  to 
+   1bdc read
+   1be3  sta
+   1be8 @ tus 
+   1bef @$mess
+   1bf6 @(age 
+   1bfd @,from
+   1c04 @0 ser
+   1c0b @4ver
+   1d78 [^_]
+   1e1d Erro
+   1e24 r: C
+   1e2b lien
+   1e32 t un
+   1e39 able
+   1e40  to 
+   1e47 crea
+   1e4e te s
+   1e53 F ockef
+   1e7b Erro
+   1e82 r: D
+   1e89 NS i
+   1e90 s un
+   1e97 able
+   1e9e  to 
+   1ea5 reso
+   1eac lve 
+   1eb1 F serv
+   1eb8 F$er a
+   1ebf F(ddref
+   1ec7 F,ss
+   1f86  [^_
+   207c [^_]
+   20b2 %s: Error: Couldn't open %s
+   20cf Usage: %s [<input_file>]
+   20e9 That's number 2.  Keep going!
+   2107 Halfway there!
+   2116 Good work!  On to the next...
+   2134 Welcome to my fiendish little bomb. You have 6 phases with
+   2170 which to blow yourself up. Have a nice day!
+   219c Phase 1 defused. How about the next one?
+   21c8 So you got that one.  Try this one.
+   21ec He is evil and fits easily into most overhead storage bins.
+   2228 Wow! You've defused the secret stage!
+   224e bruins
+   2278 maduiersnfotvbylSo you think you can stop the bomb with ctrl-c, do you?
+   22c0 ERROR: Input string is too large.
+   22e4 Your instructor has been notified.
+   2308 Curses, you've found the secret phase!
+   2330 But finding it and solving it are quite different...
+   2368 Congratulations! You've defused the bomb!
+   2394 Your instructor has been notified and will verify your solution.
+   23d5 Well...
+   23dd OK. :-)
+   23e5 Invalid phase%s
+   23f6 Initialization error:
+   2410 defused
+   2418 exploded
+   2421 %d:%s:%d:%s
+   242e BOOM!!!
+   2436 The bomb has blown up.
+   244d %d %d %d %d %d %d
+   245f Error: Premature EOF on stdin
+   247d GRADE_BOMB
+   2488 Error: Input line too long
+   24a3 ***truncated***
+   24b3 %d %d %s
+   24bc DrEvil
+   24c4 Program timed out after %d seconds
+   24e8 Error: HTTP request failed with error %d: %s
+   2518 GET /%s/submitr.pl/?userid=%s&lab=%s&result=%s&submit=submit HTTP/1.0
+   2564 Error: Result string contains an illegal or unprintable character.
+   25a8 Error: Unable to connect to server %s
+   25d0 %%%02X
+   25d7 %s %d %[a-zA-z ]
+   25e8 th101a-1.cs.wm.edu
+   25fc AUTORESULT_STRING=%s
+   2616 csapp
+   275f ;*2$" 
+   31a0 yzhang21

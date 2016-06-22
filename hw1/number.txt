@@ -1,0 +1,9 @@
+Yingzhu Zhang
+
+(1) num1 = 237, num2 = 128
+(2) num1 = -19, num2 = -128
+(3) 157 = 0x0000009d 
+(4) -157 = 0xffffff63
+(5) 137; 0x89
+(6) 0b100011; 0x23
+(7) 23, Overflow; -23 Overflow; -11 No overflow. 

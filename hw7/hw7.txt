@@ -1,0 +1,61 @@
+Yingzhu Zhang
+CS304 HW7
+
+
+1. Structure and alignment
+
+||---+---+---+---+---+---+---+---||---+---+---+---+---+---+---+---||---+---+---+---+---+---+---+---||---+---+---+---+---+---+---+---||
+
+||	value		 | c | --------- || left          |d  |---| flag  || right         |unit   |-------||      next     |				
+
+||---+---+---+---+---+---+---+---||---+---+---+---+---+---+---+---||---+---+---+---+---+---+---+---||---+---+---+---+---+---+---+---||
+
+p+0            p+4   p+5        p+8             p=12 p+13 p+14    p+16 			  p+20    p+22    p+24             p+28
+
+
+	1. E
+	2. A
+	3. D
+
+2. Union
+
+5678 1234 a987
+44434241 fedc0045
+c3d4a1b2 1728e5f6
+
+
+3. Implicit list header
+
+Request  	Block size (decimal bytes)  Block header (hex)
+
+malloc(3)  		8				  			0x9
+malloc(11) 		16				    		0x11
+malloc(20) 		24				  			0x19
+malloc(21) 		32				  			0x21
+
+
+4. Next-fit (put this to the entire thing and see if it compiles)
+
+/* Next fit search */
+static void *find_fit(size_t asize){
+    char* prev_bp = bp;
+
+    /* Search from the bp to the end of list */
+    for ( ; GET_SIZE(HDRP(bp)) > 0; bp = NEXT_BLKP(bp))
+	if (!GET_ALLOC(HDRP(bp)) && (asize <= GET_SIZE(HDRP(bp))))
+	    return bp;
+
+    /* Search from the beginning of the list to bp*/
+    for (bp = heap_listp; bp < prev_bp; bp = NEXT_BLKP(bp))
+	if (!GET_ALLOC(HDRP(bp)) && (asize <= GET_SIZE(HDRP(bp))))
+	    return bp;
+
+    return NULL; /* No fit */	
+}
+
+
+
+
+
+
+
